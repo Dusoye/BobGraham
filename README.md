@@ -10,4 +10,4 @@ The code obtains a list of the current finishers via the Bob Graham API (http://
 - SVR
 - Neural Network
 
-The RF model providided greater accuracy (RMSE) based on the current features.
+The RF model providided greatest accuracy (RMSE) based on the current features, with a neural net having the lowest accuracy after a bit of playing around with model architectures. This is somewhat expected given the low number of training samples.
