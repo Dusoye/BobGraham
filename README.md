@@ -7,7 +7,20 @@ The code obtains a list of the current finishers via the Bob Graham API (http://
 - Random Forest
 - Polynomial Regression
 - XGBoost
-- SVR
+- Support vector regression
 - Neural Network
 
-The RF model providided greatest accuracy (RMSE) based on the current features, with a neural net having the lowest accuracy after a bit of playing around with model architectures. This is somewhat expected given the low number of training samples.
+The RF model providided greatest accuracy (RMSE) based on the current features, with a neural net having the lowest accuracy after a bit of playing around with model architectures. This is somewhat expected given the low number of training samples. 
+
+Below shows the predictions of the various models for a specific runner (980130) who ended up completing the Bob Graham round in 22:57, so exactly inline with the SVR model. This may have been more luck than anything though as the error rate for this model in the test set was greater than that of the Random Forest.
+
+| model                | prediction   | formatted_prediction |
+|----------------------|--------------|----------------------|
+| Random Forest        | 77587.417465 | 21:33:07             |
+| XGBoost              | 75062.000000 | 20:51:02             |
+| SVR                  | 82598.356126 | 22:56:38             |
+| Polynomial Regression| 81526.156993 | 22:38:46             |
+| Neural Network       | 52463.695312 | 14:34:23             |
+
+![Random Forest accuracy](./output/rf_pred.png)
+![Random Forest residuals](./output/rf_residual.png)
